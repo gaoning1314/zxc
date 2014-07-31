@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>angularjs  表单</title>
+	</head>
+
+ <body ng-app>
+     <div ng-controller="StartUpController">
+            <form>
+              Starting:<input ng-change="computeNeed()" ng-model="funding.num"/>
+               Recommendation:{{needed}}
+        </form>
+       </div>
+  <script type="text/javascript" src="js/angular.min.js"></script>
+  
+  
+   <script type="text/javascript">
+      function StartUpController($scope){
+          $scope.funding={num:0};
+          $scope.computeNeed=function(){
+              $scope.needed=$scope.funding.num*10;
+         }
+     }
+ </script>
+  </body>
